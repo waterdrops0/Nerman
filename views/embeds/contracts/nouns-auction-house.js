@@ -16,7 +16,7 @@ exports.generateAuctionBidEmbed = function (data) {
       `https://etherscan.io/address/${data.bidder.id}`,
    );
    const nounsLink = getNounsLink(data.id);
-   const amount = getEthAmount(data.amount);
+   const amount = getEthAmount(Number(data.amount));
 
    return new EmbedBuilder()
       .setColor('#00FFFF')

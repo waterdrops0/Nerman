@@ -21,7 +21,7 @@ exports.generateAuctionBidEmbed = function (data) {
       data.bidder.name,
       `https://etherscan.io/address/${data.bidder.id}`,
    );
-   const amount = getEthAmount(data.amount);
+   const amount = getEthAmount(Number(data.amount));
    const lilNoun = hyperlink(
       `Lil Noun ${data.id}`,
       `https://lilnouns.wtf/lilnoun/${data.id}`,

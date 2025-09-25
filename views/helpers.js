@@ -2,6 +2,8 @@ const { hyperlink } = require('discord.js');
 
 const shortenAddress = require('../helpers/nouns/shortenAddress');
 
+const WEI_PER_ETH = 1000000000000000000;
+
 exports.findAccountLink = async function (Nouns, id) {
    const bidderENS = await exports.findAccountENS(Nouns, id);
    const ethBaseUrl = 'https://etherscan.io/address/';
@@ -15,16 +17,8 @@ exports.getNounsLink = function (nounId) {
 /**
  * @param {BigNumber} amount
  */
-exports.getEthAmount = function (amount) {
-   let bigNumString = amount.toString();
-   if (bigNumString.length < 18) {
-      const startingLength = bigNumString.length;
-      for (let i = 0; i < 18 - startingLength; ++i) {
-         bigNumString = '0' + bigNumString;
-      }
-   }
-
-   return Number(bigNumString.slice(0, -18) + '.' + bigNumString.slice(-18));
+exports.getEthAmount = function (weiAmount) {
+   return weiAmount / WEI_PER_ETH;
 };
 
 exports.findAccountENS = async function (Nouns, id) {

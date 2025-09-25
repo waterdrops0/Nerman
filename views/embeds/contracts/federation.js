@@ -22,7 +22,7 @@ exports.generateFederationBidEmbed = function (
    const title = `Nouns Gov Pool | ${data.proposalTitle}`;
    const url = `https://www.federation.wtf/governance-pools/0x0f722d69B3D8C292E85F2b1E5D9F4439edd58F1e/${data.propId}`;
 
-   const amount = getEthAmount(data.amount);
+   const amount = getEthAmount(Number(data.amount));
    let bidderLink = data.bidderName;
    let vote = data.supportVote;
    let bidAmount = `${amount}Ξ`;
@@ -68,7 +68,7 @@ exports.generateFederationVoteEmbed = function (
    const title = `Nouns Gov Pool | ${data.proposalTitle}`;
    const url = `https://www.federation.wtf/governance-pools/0x0f722d69B3D8C292E85F2b1E5D9F4439edd58F1e/${data.propId}`;
 
-   const amount = getEthAmount(data.amount);
+   const amount = getEthAmount(Number(data.amount));
    let bidAmount = `${amount}Ξ`;
    let bidderLink = data.bidderName;
    let vote = data.supportVote;
