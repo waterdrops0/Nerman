@@ -38,9 +38,6 @@ module.exports = {
          const nerman = await _nerman;
          const Nouns = client.libraries.get('Nouns');
 
-         const nounsNymz = new nerman.NounsNymz();
-         client.libraries.set('NounsNymz', nounsNymz);
-
          const federationNounsPool = new nerman.FederationNounsPool(
             Nouns.provider,
          );
@@ -242,20 +239,6 @@ module.exports = {
 
             data.eventName = 'NounCreated';
             router.sendToFeed(data, 'nounCreated', 'nouns-token');
-         });
-
-         // =============================================================
-         // NounsNymz
-         // =============================================================
-
-         nounsNymz.on('NewPost', async post => {
-            Logger.info('ready.js: On NewPost.', {
-               postId: post.id,
-               postTitle: post.title,
-            });
-
-            post.eventName = 'NewPost';
-            router.sendToFeed(post, 'newPost', 'nouns-nymz');
          });
 
          // =============================================================

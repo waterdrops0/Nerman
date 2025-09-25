@@ -36,9 +36,6 @@ events.set(
 events.set('signatureAdded', 'Nouns.DAOData.SignatureAdded');
 events.set('feedbackSent', 'Nouns.DAOData.FeedbackSent');
 
-// NounsNymz.
-events.set('newPost', 'NounsNymz.NewPost');
-
 // NounsFork
 events.set('forkAuctionCreated', 'NounsFork.AuctionHouse.ForkAuctionCreated');
 events.set('forkAuctionBid', 'NounsFork.AuctionHouse.ForkAuctionBid');

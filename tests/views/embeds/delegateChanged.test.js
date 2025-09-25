@@ -3,7 +3,7 @@ const { describe, it } = require('mocha');
 
 const { extractVoteChange } = require('../../../views/embeds/contracts/nouns-token');
 
-describe('views/embeds/nounsNymzPost.js tests', function () {
+describe('views/embeds/contracts/nouns-token.js tests', function () {
    describe('extractVoteChange() tests', function () {
       it('should return 6', function () {
          const hex =
