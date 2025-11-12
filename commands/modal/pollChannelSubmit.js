@@ -236,6 +236,7 @@ module.exports = {
             {
                guildId: modal.guild.id,
                channelId: modal.channelId,
+               numOfPollChannels: guildConfig.pollChannels.length,
             },
          );
 
@@ -247,9 +248,7 @@ module.exports = {
             {
                guildId: modal.guild.id,
                channelId: modal.channelId,
-               numOfPollChannels: Array.isArray(guildConfig.pollChannels)
-                  ? guildConfig.pollChannels.length
-                  : 0,
+               numOfPollChannels: guildConfig.pollChannels.length,
             },
          );
 
