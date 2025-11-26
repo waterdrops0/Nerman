@@ -1,5 +1,5 @@
 .dockerignore
-.Dockerfile
+Dockerfile
 node_modules
 .env
 config.json
